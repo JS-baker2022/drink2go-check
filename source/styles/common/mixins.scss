@@ -1,0 +1,29 @@
+// Mobile first
+
+@mixin vp-320 {
+   @media (min-width: $vp-320) {
+     @content;
+  }
+}
+
+@mixin vp-768 {
+   @media (min-width: $vp-768) {
+    @content;
+   }
+}
+
+
+@mixin vp-1440 {
+  @media (min-width: $vp-1440) {
+   @content;
+  }
+}
+
+
+@mixin list-style-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  @content;
+}
