@@ -2,14 +2,59 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>Название проекта</title>
+    <title>HTML Academy: Drink2Go</title>
+    <meta name="description" content="Интернет-магазин кофейных напитков.">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="preload" href="#" type="font/woff2" as="font">
+    <link rel="preload" href="fonts/montserrat/montserrat-v26-cyrillic_latin-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat/montserrat-v26-cyrillic_latin-600.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat/montserrat-v26-cyrillic_latin-700.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat/montserrat-v26-cyrillic_latin-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="favicon.ico"> <!-- 32×32 -->
+    <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicons/apple.png"> <!-- 180×180 -->
+    <link rel="manifest" href="manifest.webmanifest">
     <script src="scripts/index.js" defer></script>
   </head>
   <body class="page__body">
-    <header class="header">Шапка</header>
+    <header class="header container">
+      <a class="header__logo" href="index.html">
+        <img src="images/header/logo-mobile.svg" alt="Логотип интернет-магазина кофейных напитков Drink2Go." width="32" height="36">
+      </a>
+      <nav class="header__navigation">
+        <ul class="header__navigation-list">
+          <li class="header__navigation-list-item">
+            <a class="header__navigation-list-link" href="#">
+              <svg width="16" height="16">
+                <use href="icons/stack.svg#user"></use>
+              </svg>
+              <span class="header__navigation-list-item-title">Войти</span>
+            </a>
+          </li>
+          <li class="header__navigation-list-item">
+            <a class="header__navigation-list-link" href="#">
+              <svg width="16" height="16">
+                <use href="icons/stack.svg#basket"></use>
+              </svg>
+              <span class="header__navigation-list-item-title">Корзина</span>
+            </a>
+          </li>
+          <li class="header__navigation-list-item">
+            <button class="header__navigation-burger" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger="burger">
+              <svg class="header__navigation-burger-text" width="16" height="12" aria-hidden="true">
+                <use href="icons/stack.svg#menu"></use>
+              </svg>
+            </button>
+            <ul class="header__navigation-menu">
+              <li class="header__navigation-menu-item"><a class="header__navigation-menu-link" href="#">Главная</a></li>
+              <li class="header__navigation-menu-item"><a class="header__navigation-menu-link" href="#">Каталог</a></li>
+              <li class="header__navigation-menu-item"><a class="header__navigation-menu-link" href="#">Доставка</a></li>
+              <li class="header__navigation-menu-item"><a class="header__navigation-menu-link" href="#">О нас</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <h1>Страница для старта</h1>
     </main>
