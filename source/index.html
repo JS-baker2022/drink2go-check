@@ -17,11 +17,11 @@
     <script src="scripts/index.js" defer></script>
   </head>
   <body class="page__body">
-    <header class="header container">
+    <header class="header container" data-test="header">
       <a class="header__logo" href="index.html">
-        <img src="images/header/logo-mobile.svg" alt="Логотип интернет-магазина кофейных напитков Drink2Go." width="32" height="36">
+        <img src="images/logo/logo-small.svg" alt="Логотип интернет-магазина кофейных напитков Drink2Go." width="32" height="36">
       </a>
-      <nav class="header__navigation">
+      <nav class="header__navigation" aria-label="Главная навигация по сайту.">
         <ul class="header__navigation-list">
           <li class="header__navigation-list-item">
             <a class="header__navigation-list-link" href="#">
@@ -56,7 +56,133 @@
       </nav>
     </header>
     <main>
-      <h1>Страница для старта</h1>
+      <h1 class="visually-hidden">Интернет-магазин кофейных напитков.</h1>
+      <section class="hero container" data-test="hero">
+        <h2 class="hero__title visually-hidden">Наши флагманские напитки.</h2>
+        <article class="hero__card">
+          <figure class="hero__card-figure">
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="img/promo-image-desktop.webp 1x, img/promo-image-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/promo-image-tablet.webp 1x, img/promo-image-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/promo-image.webp 1x, img/promo-image@2x.webp 2x">
+              <source media="(min-width: 1200px)" srcset="img/promo-image-desktop.png 1x, img/promo-image-desktop@2x.png 2x">
+              <source media="(min-width: 768px)" srcset="img/promo-image-tablet.png 1x, img/promo-image-tablet@2x.png 2x">
+              <img class="hero__image" src="img/promo-image.png" srcset="img/promo-image@2x.png 2x" width="280" height="270" alt="Упаковка функционального питания для котов из курицы.">
+            </picture>
+          </figure>
+          <p class="hero__card-bunner">Новинка!</p>
+          <h3 class="hero__card-title">Декаф Флэт Уайт</h3>
+          <p class="hero__card-description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
+          <div class="hero__card-price">
+            <p class="hero__card-price-full">295₽</p>
+            <p class="hero__card-price-discount">225₽</p>
+            <button class="hero__card-button" type="button">Заказать</button>
+          </div>
+        </article>
+      </section>
+      <section class="features container" data-test="features">
+        <p class="features__bunner">Преимущества</p>
+        <h2 class="features__title">Главные причины выбрать Drink2Go</h2>
+        <ul class="features__list">
+          <li class="features__list-item features__list-item--clock">
+            <h3 class="features__list-item-title">Скорость</h3>
+            <p class="features__list-item-description">Готовый напиток всегда под рукой — просто открой банку</p>
+          </li>
+          <li class="features__list-item features__list-item--pocket">
+            <h3 class="features__list-item-title">Удобство</h3>
+            <p class="features__list-item-description">Легко помещается и в карман, и в маленькую сумочку</p>
+          </li>
+          <li class="features__list-item features__list-item--lightning">
+            <h3 class="features__list-item-title">Бодрость</h3>
+            <p class="features__list-item-description">Сбалансированная доза кофеина даст мощный заряд энергии</p>
+          </li>
+          <li class="features__list-item features__list-item--leaf">
+            <h3 class="features__list-item-title">Экологичность</h3>
+            <p class="features__list-item-description">Вся упаковка сделана из перерабатываемых материалов</p>
+          </li>
+        </ul>
+      </section>
+      <section data-test="catalog"></section>
+      <section data-test="map">
+        <h2 class="visually-hidden">Расположение нашего магазина на карте.</h2>
+        <div class="map-wrapper">
+          <figure class="map__figure">
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="images/map-desktop@1x.webp 1x, images/map-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="images/map-tablet@1x.webp 1x, images/map-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="images/map@1x.webp 1x, images/map@2x.webp 2x">
+              <source media="(min-width: 1440px)" srcset="images/map-desktop@1x.jpg 1x, images/map-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="images/map-tablet@1x.jpg 1x, images/map-tablet@2x.jpg 2x">
+              <img class="map__img-map" src="images/map@1x.jpg" srcset="images/map@2x.jpg 2x" width="320" height="440" alt="Расположение магазина на карте в Санкт-Петербурге.">
+            </picture>
+          </figure>
+        </div>
+      </section>
+      <section class="footer" data-test="footer">
+        <h2 class="visually-hidden">Мы в социальных сетях и медиа.</h2>
+        <div class="footer__links-block container">
+          <a class="footer__logo" target="_blank" href="https://htmlacademy.ru/intensive/adaptive">
+            <figure class="footer__figure">
+              <picture>
+                <source media="(min-width: 768px)" srcset="images/logo/Logo-large.svg" width="170" height="36">
+                <img src="images/logo/Logo-medium.svg" alt="Логотип интернет-магазина кофейных напитков Drink2Go." width="82" height="36">
+              </picture>
+            </figure>
+          </a>
+          <ul class="footer__links-list">
+            <li class="footer__links-list-item">
+              <a class="footer__link footer__link--vk" href="#" target="_blank" rel="noreferrer noopener"><span class="visually-hidden">Перейти на нашу страницу Вконтакте.</span></a>
+            </li>
+            <li class="footer__links-list-item">
+              <a class="footer__link footer__link--pinterest" href="#" target="_blank" rel="noreferrer noopener"><span class="visually-hidden">Перейти на нашу страницу Pinterest.</span></a>
+            </li>
+            <li class="footer__links-list-item">
+              <a class="footer__link footer__link--ok" href="#" target="_blank" rel="noreferrer noopener"><span class="visually-hidden">Перейти на нашу страницу в Одноклассниках.</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu container">
+          <h3 class="footer__menu-title footer__subtitle">Интернет-магазин</h3>
+          <nav class="footer__navigation" aria-label="Дополнительная навигация по сайту.">
+            <ul class="footer__navigation-list">
+              <li class="footer__navigation-list-item">
+                <a class="footer__navigation-link" href="#">Каталог</a>
+              </li>
+              <li class="footer__navigation-list-item">
+                <a class="footer__navigation-link" href="#">Доставка</a>
+              </li>
+              <li class="footer__navigation-list-item">
+                <a class="footer__navigation-link" href="#">Способы оплаты</a>
+              </li>
+              <li class="footer__navigation-list-item">
+                <a class="footer__navigation-link" href="#">О нас</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__media container">
+          <h3 class="footer__media-title footer__subtitle">Медиа</h3>
+          <ul class="footer__media-list">
+            <li class="footer__media-list-item">
+              <a class="footer__media-link" href="#">Блог</a>
+            </li>
+            <li class="footer__media-list-item">
+              <a class="footer__media-link" href="#">Информация для СМИ</a>
+            </li>
+            <li class="footer__media-list-item">
+              <a class="footer__media-link" href="#">Правовая информация</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__contacts container">
+          <h3 class="footer__contacts-title footer__subtitle">Контакты</h3>
+          <address class="footer__contacts__address">Санкт-Петербург, набережная реки Карповки, дом 5</address>
+          <a class="footer__contacts-link" href="tel:+7(999) 999-99-99" target="_blank" rel="noreferrer noopener">+7(999) 999-99-99</a>
+        </div>
+        <div class="footer__academy container">
+          <a class="footer__academy-link" href="https://htmlacademy.ru/intensive/adaptive">Разработано в HTML Academy</a>
+        </div>
+      </section>
     </main>
   </body>
 </html>
