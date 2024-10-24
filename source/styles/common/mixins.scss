@@ -27,3 +27,8 @@
   list-style: none;
   @content;
 }
+
+@mixin margin-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+}
