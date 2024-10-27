@@ -1,0 +1,200 @@
+.features {
+  padding-top: 50px;
+  padding-bottom: 60px;
+
+  @include vp-768 {
+    padding: 29px 10px 100px;
+  }
+
+  @include vp-1440 {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+}
+
+.features__bunner {
+  @include margin-reset;
+  color: $color-default-primary;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+
+.features__title {
+  @include margin-reset;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  padding-bottom: 36px;
+
+  @include vp-768 {
+    font-size: 42px;
+    line-height: 64px;
+    padding-bottom: 60px;
+  }
+
+  @include vp-1440 {
+    padding-bottom: 50px;
+  }
+}
+
+.features__list {
+  @include list-style-reset;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+
+  @include vp-768 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 50px;
+  }
+
+  @include vp-1440 {
+    row-gap: 0;
+    column-gap: 20px;
+    align-items: center;
+    padding-left: 25px;
+  }
+
+}
+
+.features__list-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  padding-top: 66px;
+  align-items: center;
+  justify-content: center;
+
+  @include vp-768 {
+    width: 269px;
+    padding-top: 0;
+    padding-left: 91px;
+    justify-content: start;
+    align-items: start;
+    row-gap: 10px;
+  }
+
+  @include vp-1440 {
+    padding-left: 0;
+    align-items: center;
+    width: 324px;
+    justify-content: center;
+    padding-top: 107px;
+  }
+
+  &--clock {
+    background-image: url(../../icons/stack.svg#clock);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: 52px 56px;
+
+    @include vp-768 {
+      background-position: 20px 3px;
+    }
+
+    @include vp-1440 {
+      background-position: 138px 30px;
+      padding-left: 2px;
+    }
+  }
+
+  &--pocket {
+    background-image: url(../../icons/stack.svg#pocket);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: 52px 56px;
+
+    @include vp-768 {
+      background-position: 20px 0;
+    }
+
+    @include vp-1440 {
+      background-position: 140px 30px;
+      padding-left: 3px;
+    }
+  }
+
+  &--lightning {
+    background-image: url(../../icons/stack.svg#lightning);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: 52px 56px;
+
+    @include vp-768 {
+      background-position: 20px 0;
+    }
+
+    @include vp-1440 {
+      background-position: 140px 30px;
+      padding-left: 3px;
+    }
+  }
+
+  &--leaf {
+    background-image: url(../../icons/stack.svg#leaf);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: 52px 56px;
+
+    @include vp-768 {
+      background-position: 20px 4px;
+    }
+
+    @include vp-1440 {
+      background-position: 140px 30px;
+      padding-left: 4px;
+
+    }
+  }
+}
+
+.features__list-item--lightning .features__list-item-title {
+  @include vp-1440 {
+    padding-left: 1px;
+  }
+}
+
+.features__list-item--lightning .features__list-item-description {
+  @include vp-1440 {
+    padding-left: 2px;
+  }
+}
+
+.features__list-item-title {
+  @include margin-reset;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+
+  @include vp-768 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+}
+
+.features__list-item-description {
+  @include margin-reset;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  @include vp-768 {
+    text-align: start;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include vp-1440 {
+    text-align: center;
+  }
+}

@@ -2,20 +2,53 @@
   background-color: $color-default-white;
   color: $color-default-black;
   display: flex;
-  padding-top: 12px;
-  padding-bottom: 12px;
   justify-content: space-between;
+  position: relative;
 
   @include vp-768 {
-    padding-top: 22px;
-    padding-bottom: 22px;
+    column-gap: 66px;
   }
+
+  @include vp-1440 {
+    column-gap: 306px;
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include vp-1440 {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "Интернет-магазин кофейных напитков";
+      right: 0;
+      transform: translateX(112%) translateY(0);
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.header-figure {
+  @include margin-reset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__navigation {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include vp-768 {
+    justify-content: unset;
+    flex-grow: 1;
+  }
 }
 
 .header__navigation-list {
@@ -23,31 +56,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.header__navigation-list-item-title {
-  display: none;
 
   @include vp-768 {
-    display: inline-block;
+    @include vp-768 {
+      justify-content: unset;
+      flex-grow: 1;
+    }
   }
 }
 
 .header__navigation-burger {
   border: none;
   background-color: inherit;
+  position: relative;
+  padding: 22px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    mask: url(../../icons/stack.svg#menu);
+    background-color: $color-default-black;
+    width: 16px;
+    height: 16px;
+    top:0;
+    left: 0;
+    transform: translateX(165%) translateY(88%);
+  }
 
   @include vp-768 {
     display: none;
   }
 }
 
-.header__navigation-menu {
-  @include list-style-reset;
-  display: none;
+.header__navigation--is-open .header__navigation-burger {
+  &::before {
+    position: absolute;
+    content: "";
+    mask: url(../../icons/stack.svg#close);
+    background-color: $color-default-black;
+    width: 16px;
+    height: 16px;
+    top:0;
+    left: 0;
+    transform: translateX(165%) translateY(88%);
+  }
 
   @include vp-768 {
-    display: flex;
+    display: none;
   }
 }
 
@@ -57,12 +112,235 @@
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 5px;
+
+  &--menu {
+    @include vp-768 {
+      order: -1;
+      margin-right: auto;
+    }
+  }
+}
+
+.header__navigation-list-item-title {
+  display: none;
+
+  @include vp-1440 {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.025em;
+  }
+}
+
+.header__navigation-list-link--basket .header__navigation-list-item-title {
+  @include vp-1440 {
+    padding-left: 23px;
+  }
+}
+
+.header__navigation-list-link--user .header__navigation-list-item-title {
+  @include vp-1440 {
+    padding-right: 3px;
+  }
 }
 
 .header__navigation-list-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 60px;
+  height: 60px;
+
+  &--basket {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      mask: url(../../icons/stack.svg#basket);
+      background-color: $color-default-black;
+      width: 16px;
+      height: 16px;
+      top:0;
+      left: 0;
+      transform: translateX(162%) translateY(134%);
+
+      @include vp-768 {
+        transform: translateX(143%) translateY(200%);
+      }
+
+      @include vp-1440 {
+        transform: translateX(120%) translateY(200%);
+      }
+    }
+  }
+
+  &--user {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      mask: url(../../icons/stack.svg#user);
+      background-color: $color-default-black;
+      width: 16px;
+      height: 16px;
+      top:0;
+      left: 0;
+      transform: translateX(162%) translateY(134%);
+
+      @include vp-768 {
+        transform: translateX(138%) translateY(205%);
+      }
+
+      @include vp-1440 {
+        transform: translateX(94%) translateY(200%);
+      }
+    }
+  }
+
+  @include vp-768 {
+    width: 60px;
+    height: 80px;
+  }
+
+  @include vp-1440 {
+    width: 128px;
+    column-gap: 8px
+  }
+}
+
+.header__navigation--is-close .header__navigation-menu {
+  @include list-style-reset;
+  display: none;
+
+  @include vp-768 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.header__navigation--is-open .header__navigation-menu {
+  @include list-style-reset;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  z-index: 5;
+  background-color: $color-default-white;
+  left: 0;
+  right: 0;
+  top: 60px;
+  align-items: center;
+  justify-content: center;
+
+  @include vp-768 {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.header__navigation-menu {
+  @include vp-1440 {
+    column-gap: 20px;
+  }
+}
+
+.header__navigation-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: $color-default-secondary;
+    width: 100%;
+    height: 1px;
+    top:0;
+    left: 0;
+    right: 0;
+  }
+
+  &:last-child {
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $color-default-secondary;
+      width: 100%;
+      height: 1px;
+      bottom:0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+
+  @include vp-768 {
+    width: unset;
+
+    &::before{
+      content: none;
+    }
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
+.header__navigation-menu-link {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &:hover {
+    color: $color-default-primary;
+  }
+
+  &:focus {
+    color: $color-default-primary;
+  }
+
+  &:active {
+    color: $color-default-black;
+    background-color: $color-default-secondary;
+  }
+
+  @include vp-768 {
+    width: 103px;
+  }
+
+  &--current {
+    @include vp-768 {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        background-color: $color-default-primary;
+        width: 100%;
+        height: 2px;
+        bottom:-11px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+  }
 }

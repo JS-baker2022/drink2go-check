@@ -19,34 +19,31 @@
   <body class="page__body">
     <header class="header container" data-test="header">
       <a class="header__logo" href="index.html">
-        <img src="images/logo/logo-small.svg" alt="Логотип интернет-магазина кофейных напитков Drink2Go." width="32" height="36">
+        <figure class="header-figure">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="images/logo/logo-large.svg" width="170" height="36">
+            <source media="(min-width: 768px)" srcset="images/logo/logo-medium.svg"  width="82" height="36">
+            <img src="images/logo/logo-small.svg" alt="Логотип интернет-магазина кофейных напитков Drink2Go." width="32" height="36">
+          </picture>
+        </figure>
       </a>
-      <nav class="header__navigation" aria-label="Главная навигация по сайту.">
+      <nav class="header__navigation header__navigation--is-close" aria-label="Главная навигация по сайту.">
         <ul class="header__navigation-list">
           <li class="header__navigation-list-item">
-            <a class="header__navigation-list-link" href="#">
-              <svg width="16" height="16">
-                <use href="icons/stack.svg#user"></use>
-              </svg>
+            <a class="header__navigation-list-link header__navigation-list-link--user" href="#">
               <span class="header__navigation-list-item-title">Войти</span>
             </a>
           </li>
           <li class="header__navigation-list-item">
-            <a class="header__navigation-list-link" href="#">
-              <svg width="16" height="16">
-                <use href="icons/stack.svg#basket"></use>
-              </svg>
+            <a class="header__navigation-list-link header__navigation-list-link--basket" href="#">
               <span class="header__navigation-list-item-title">Корзина</span>
             </a>
           </li>
-          <li class="header__navigation-list-item">
+          <li class="header__navigation-list-item header__navigation-list-item--menu">
             <button class="header__navigation-burger" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger="burger">
-              <svg class="header__navigation-burger-text" width="16" height="12" aria-hidden="true">
-                <use href="icons/stack.svg#menu"></use>
-              </svg>
             </button>
             <ul class="header__navigation-menu">
-              <li class="header__navigation-menu-item"><a class="header__navigation-menu-link" href="#">Главная</a></li>
+              <li class="header__navigation-menu-item"><a class="header__navigation-menu-link header__navigation-menu-link--current" href="#">Главная</a></li>
               <li class="header__navigation-menu-item"><a class="header__navigation-menu-link" href="#">Каталог</a></li>
               <li class="header__navigation-menu-item"><a class="header__navigation-menu-link" href="#">Доставка</a></li>
               <li class="header__navigation-menu-item"><a class="header__navigation-menu-link" href="#">О нас</a></li>
@@ -57,28 +54,75 @@
     </header>
     <main>
       <h1 class="visually-hidden">Интернет-магазин кофейных напитков.</h1>
-      <section class="hero container" data-test="hero">
+      <section class="hero" data-test="hero">
         <h2 class="hero__title visually-hidden">Наши флагманские напитки.</h2>
-        <article class="hero__card">
-          <figure class="hero__card-figure">
-            <picture>
-              <source type="image/webp" media="(min-width: 1200px)" srcset="img/promo-image-desktop.webp 1x, img/promo-image-desktop@2x.webp 2x">
-              <source type="image/webp" media="(min-width: 768px)" srcset="img/promo-image-tablet.webp 1x, img/promo-image-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/promo-image.webp 1x, img/promo-image@2x.webp 2x">
-              <source media="(min-width: 1200px)" srcset="img/promo-image-desktop.png 1x, img/promo-image-desktop@2x.png 2x">
-              <source media="(min-width: 768px)" srcset="img/promo-image-tablet.png 1x, img/promo-image-tablet@2x.png 2x">
-              <img class="hero__image" src="img/promo-image.png" srcset="img/promo-image@2x.png 2x" width="280" height="270" alt="Упаковка функционального питания для котов из курицы.">
-            </picture>
-          </figure>
-          <p class="hero__card-bunner">Новинка!</p>
-          <h3 class="hero__card-title">Декаф Флэт Уайт</h3>
-          <p class="hero__card-description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
-          <div class="hero__card-price">
-            <p class="hero__card-price-full">295₽</p>
-            <p class="hero__card-price-discount">225₽</p>
-            <button class="hero__card-button" type="button">Заказать</button>
+        <div class="hero__swiper swiper">
+          <div class="swiper-wrapper">
+            <article class="hero__card hero__card--flat-white container swiper-slide">
+              <figure class="hero__card-figure">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1440px)" srcset="images/flat-white-desktop@1x.webp 1x, images/flat-white-desktop@2x.webp 2x" width="600" height="600">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="images/flat-white-tablet@1x.webp 1x, images/flat-white-tablet@2x.webp 2x" width="476" height="476">
+                  <source type="image/webp" srcset="images/flat-white-mobile@1x.webp 1x, images/flat-white-mobile@2x.webp 2x" width="280" height="280">
+                  <source media="(min-width: 1440px)" srcset="images/flat-white-desktop@1x.png 1x, images/flat-white-desktop@2x.png 2x" width="600" height="600">
+                  <source media="(min-width: 768px)" srcset="images/flat-white-tablet@1x.png 1x, images/flat-white-tablet@2x.png 2x"  width="476" height="476">
+                  <img class="hero__image" src="images/flat-white-mobile@1x.png" srcset="images/flat-white-mobile@2x.png 2x" width="280" height="280" alt="Упаковка функционального питания для котов из курицы.">
+                </picture>
+              </figure>
+              <p class="hero__card-bunner">Новинка!</p>
+              <h3 class="hero__card-title">Декаф Флэт Уайт</h3>
+              <p class="hero__card-description">Свежесваренный кофе без кофеина из Эфиопии с&nbsp;натуральным фермерским молоком — то, что нужно для&nbsp;расслабления после тяжёлого рабочего дня</p>
+              <div class="hero__card-price">
+                <p class="hero__card-price-full">295₽</p>
+                <p class="hero__card-price-discount">225₽</p>
+                <button class="hero__card-button button" type="button">Заказать</button>
+              </div>
+            </article>
+            <article class="hero__card hero__card--latte container swiper-slide">
+              <figure class="hero__card-figure">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1440px)" srcset="images/latte-desktop@1x.webp 1x, images/latte-desktop@2x.webp 2x" width="600" height="600">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="images/latte-tablet@1x.webp 1x, images/latte-tablet@2x.webp 2x" width="476" height="476">
+                  <source type="image/webp" srcset="images/latte-mobile@1x.webp 1x, images/latte-mobile@2x.webp 2x" width="280" height="280">
+                  <source media="(min-width: 1440px)" srcset="images/latte-desktop@1x.png 1x, images/latte-desktop@2x.png 2x" width="600" height="600">
+                  <source media="(min-width: 768px)" srcset="images/latte-tablet@1x.png 1x, images/latte-tablet@2x.png 2x"  width="476" height="476">
+                  <img class="hero__image" src="images/latte-mobile@1x.png" srcset="images/latte-mobile@2x.png 2x" width="280" height="280" alt="Упаковка функционального питания для котов из курицы.">
+                </picture>
+              </figure>
+              <p class="hero__card-bunner">Новинка!</p>
+              <h3 class="hero__card-title">Лавандовый Латте</h3>
+              <p class="hero__card-description">Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор</p>
+              <div class="hero__card-price">
+                <p class="hero__card-price-full">285₽</p>
+                <p class="hero__card-price-discount">265₽</p>
+                <button class="hero__card-button button" type="button">Заказать</button>
+              </div>
+            </article>
+            <article class="hero__card hero__card--espresso container swiper-slide">
+              <figure class="hero__card-figure">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1440px)" srcset="images/espresso-desktop@1x.webp 1x, images/espresso-desktop@2x.webp 2x" width="600" height="600">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="images/espresso-tablet@1x.webp 1x, images/espresso-tablet@2x.webp 2x" width="476" height="476">
+                  <source type="image/webp" srcset="images/espresso-mobile@1x.webp 1x, images/espresso-mobile@2x.webp 2x" width="280" height="280">
+                  <source media="(min-width: 1440px)" srcset="images/espresso-desktop@1x.png 1x, images/espresso-desktop@2x.png 2x" width="600" height="600">
+                  <source media="(min-width: 768px)" srcset="images/espresso-tablet@1x.png 1x, images/espresso-tablet@2x.png 2x"  width="476" height="476">
+                  <img class="hero__image" src="images/espresso-mobile@1x.png" srcset="images/espresso-mobile@2x.png 2x" width="280" height="280" alt="Упаковка функционального питания для котов из курицы.">
+                </picture>
+              </figure>
+              <p class="hero__card-bunner">Новинка!</p>
+              <h3 class="hero__card-title">Тройной Эспрессо</h3>
+              <p class="hero__card-description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость</p>
+              <div class="hero__card-price">
+                <p class="hero__card-price-full">395₽</p>
+                <p class="hero__card-price-discount">375₽</p>
+                <button class="hero__card-button button" type="button">Заказать</button>
+              </div>
+            </article>
+
           </div>
-        </article>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </section>
       <section class="features container" data-test="features">
         <p class="features__bunner">Преимущества</p>
@@ -90,7 +134,7 @@
           </li>
           <li class="features__list-item features__list-item--pocket">
             <h3 class="features__list-item-title">Удобство</h3>
-            <p class="features__list-item-description">Легко помещается и в карман, и в маленькую сумочку</p>
+            <p class="features__list-item-description">Легко помещается и в карман, и&nbsp;в&nbsp;маленькую сумочку</p>
           </li>
           <li class="features__list-item features__list-item--lightning">
             <h3 class="features__list-item-title">Бодрость</h3>
@@ -98,11 +142,10 @@
           </li>
           <li class="features__list-item features__list-item--leaf">
             <h3 class="features__list-item-title">Экологичность</h3>
-            <p class="features__list-item-description">Вся упаковка сделана из перерабатываемых материалов</p>
+            <p class="features__list-item-description">Вся упаковка сделана из&nbsp;перерабатываемых материалов</p>
           </li>
         </ul>
       </section>
-      <section data-test="catalog"></section>
       <section data-test="map">
         <h2 class="visually-hidden">Расположение нашего магазина на карте.</h2>
         <div class="map-wrapper">
@@ -110,10 +153,10 @@
             <picture>
               <source type="image/webp" media="(min-width: 1200px)" srcset="images/map-desktop@1x.webp 1x, images/map-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)" srcset="images/map-tablet@1x.webp 1x, images/map-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="images/map@1x.webp 1x, images/map@2x.webp 2x">
+              <source type="image/webp" srcset="images/map-mobile@1x.webp 1x, images/map-mobile@2x.webp 2x">
               <source media="(min-width: 1440px)" srcset="images/map-desktop@1x.jpg 1x, images/map-desktop@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="images/map-tablet@1x.jpg 1x, images/map-tablet@2x.jpg 2x">
-              <img class="map__img-map" src="images/map@1x.jpg" srcset="images/map@2x.jpg 2x" width="320" height="440" alt="Расположение магазина на карте в Санкт-Петербурге.">
+              <img class="map__img-map" src="images/map-mobile@1x.jpg" srcset="images/map-mobile@2x.jpg 2x" width="320" height="440" alt="Расположение магазина на карте в Санкт-Петербурге.">
             </picture>
           </figure>
         </div>
@@ -177,7 +220,7 @@
         <div class="footer__contacts container">
           <h3 class="footer__contacts-title footer__subtitle">Контакты</h3>
           <address class="footer__contacts__address">Санкт-Петербург, набережная реки Карповки, дом 5</address>
-          <a class="footer__contacts-link" href="tel:+7(999) 999-99-99" target="_blank" rel="noreferrer noopener">+7(999) 999-99-99</a>
+          <a class="footer__contacts-link" href="tel:+79999999999" target="_blank" rel="noreferrer noopener">+7(999) 999-99-99</a>
         </div>
         <div class="footer__academy container">
           <a class="footer__academy-link" href="https://htmlacademy.ru/intensive/adaptive">Разработано в HTML Academy</a>
